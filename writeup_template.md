@@ -21,27 +21,19 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale and then I blurred the image using gaussian blur. Afterwards, using canny edge detection algorithm and polygon mask, I identified possible lane edges within area of interest. From this set, using Hough transform, I received a set of detected lines. Not of them represented desired road lines, therefore I filtered out unwanted ones by checking line steepness and its position on the image. 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In order to draw a single line on the left and right lanes, I gathered all the points corresponding to the lines on one side and fitted a single line using cv2.fitLine, drawing it next between the edges of the region of the interest.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+Here are the sample of the pipeline results:
 
 ![alt text][image1]
 
 
-### 2. Identify potential shortcomings with your current pipeline
+One identified shortcomming
 
 
-One potential shortcoming would be what would happen when ... 
 
-Another shortcoming could be ...
+First possible improvement that comes to my mind is to somehow automate adjusting some of the parameters. Clearly the pipeline doesn't work really well on the 'challange' video, especially where the contrast between the tarmac and the lane is very low. Perhaps setting the parameters basing on image histogram would do the job? 
 
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
