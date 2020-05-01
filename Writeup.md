@@ -36,7 +36,7 @@ Here are the sample of the pipeline results:
 ![alt text][image3]
 
 
-Among identified shortcommings I can definitely mention that the pipeline didn't handle well the challenge video. Apparently the set of parameters I ended up with works only in the very specific conditions present in the sample images and two sample videos. The pipeline seems to be very sensitive to situation when the contrast between lanes and the road is significantly lesser than in sample inputs.
+Among identified shortcomings I can definitely mention that the pipeline didn't handle well the challenge video. Apparently the set of parameters I ended up with works only in the very specific conditions present in the sample images and two sample videos. The pipeline seems to be very sensitive to situation when the contrast between lanes and the road is significantly lesser than in sample inputs.
 
-First possible improvement that comes to my mind is to introduce automatic adjustment of some parameters. Perhaps setting the parameters basing on image histogram would do the job? 
+First possible improvement that comes to my mind is to introduce automatic adjustment of some parameters. Perhaps setting the parameters basing on image histogram would be a good path to follow. Additionally better control over false-positive lines would be helpful in order to achieve better lane spatial stability.  
 
